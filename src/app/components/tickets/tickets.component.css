@@ -1,0 +1,9 @@
+#tickets-actions {
+	display: flex;
+	justify-content: space-evenly;
+	margin: var(--space-4);
+	padding: auto var(--space-2);
+	/* border: 1px solid red; */
+	border-radius: var(--border-radius-medium);
+	background-color: var(--color-primary-200-bg);
+}
