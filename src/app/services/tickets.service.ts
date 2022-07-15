@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { HttpClient, HttpHeaders } from '@angular/common/http'
+import { Observable, of } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Ticket, TicketPaginated } from '../interfaces/Ticket.interface';
+import { TICKETS } from '../data/mock-data';
 
 const httpOptions = {
 	headers: new HttpHeaders({
@@ -10,27 +11,31 @@ const httpOptions = {
 	})
 };
 
+const ticketsData: Ticket[] = TICKETS.tickets!;
+
 @Injectable({
 	providedIn: 'root'
 })
 export class TicketService {
 
-	private apiUrl = 'http://localhost:3000/tickets'
 
-	constructor(private http: HttpClient) { }
+
+	constructor() { }
 
 	// TODO from backend
-	getTasks(): Observable<TicketPaginated[]>{
-		return this.http.get<TicketPaginated[]>(this.apiUrl)
+
+	getTicketsBeta(): Ticket[] {
+		return ticketsData;
+		// const tickets = of(ticketsData);
+		// return tickets;
+	}
+	getTicketsObs(): Observable<Ticket[]> {
+		const tickets = of(ticketsData);
+		return tickets;
 	}
 
-	deleteTicket(ticket: Ticket): Observable<Ticket> {
-		const url = `${this.apiUrl}/${ticket._id}`;
-		return this.http.delete<Ticket>(url);
-	}
+	// getTickets(): Observable<TicketPaginated[]> {
+	// 	return this.http.get<TicketPaginated[]>(this.apiUrl);
+	// }
 
-	updateTicketStatus(ticket: Ticket): Observable<Ticket> {
-		const url = `${this.apiUrl}/${ticket._id}`;
-		return this.http.put<Ticket>(url, ticket, httpOptions);
-	}
 }
