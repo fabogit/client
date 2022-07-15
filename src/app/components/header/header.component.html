@@ -3,16 +3,30 @@
 	<div>
 		<a href="">
 			<app-button
-				color="green"
+				color="var(--color-primary-200-contrast)"
+				btnText="Register"
+				(btnClick)="register()">
+			</app-button>
+		</a>
+		<a href="">
+			<app-button
+				color="var(--color-primary-200-contrast)"
 				btnText="Login"
 				(btnClick)="login()">
 			</app-button>
 		</a>
 		<a href="">
 			<app-button
-				color="blue"
+				color="var(--color-primary-200-contrast)"
 				btnText="Logout"
 				(btnClick)="logout()">
+			</app-button>
+		</a>
+		<a href="">
+			<app-button
+				color="var(--color-primary-200-contrast)"
+				btnText="Tickets"
+				(btnClick)="showTickets()">
 			</app-button>
 		</a>
 	</div>

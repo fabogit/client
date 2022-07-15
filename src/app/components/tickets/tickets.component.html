@@ -1,8 +1,11 @@
 <section>
 	<div id="tickets-actions">
-		<app-button color="orange" btnText="Create ticket"></app-button>
-		<app-button color="red" btnText="Remove ticket"></app-button>
+		<app-button color="var(--color-primary-200-contrast)" btnText="Page +1"></app-button>
+		<app-button color="var(--color-primary-400)" btnText="Create ticket"></app-button>
+		<app-button color="var(--color-primary-200-contrast)" btnText="Page -1"></app-button>
 	</div>
-	<app-ticket-item *ngFor="let ticket of tickets" [ticket]="ticket">
-	</app-ticket-item>
+	<div id="tickets-list">
+		<app-ticket-item *ngFor="let ticket of tickets" [ticket]="ticket">
+		</app-ticket-item>
+	</div>
 </section>

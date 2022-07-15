@@ -1,24 +1,28 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+	selector: 'app-header',
+	templateUrl: './header.component.html',
+	styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+	constructor() { }
 
-	in = 'loggin user in';
-	out = 'loggin user out';
+	ngOnInit(): void {
+	}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+	register() {
+		console.log('register');
+	}
 
 	login() {
-		console.log(this.in);
+		console.log('log in');
 	}
 	logout() {
-		console.log(this.out);
+		console.log('log out');
+	}
+
+	showTickets(){
+		console.log('tickets');
 	}
 }
