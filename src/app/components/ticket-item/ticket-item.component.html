@@ -1,1 +1,8 @@
-<p>ticket-item works!</p>
+<div class="ticket">
+	<h3>
+		{{ ticket.createdAt | date }}
+		<fa-icon [icon]="faTimes" [ngStyle]="{ color: 'red'}"></fa-icon>
+	</h3>
+	<p>{{ ticket._id }}</p>
+	<p>{{ ticket.username }}</p>
+</div>

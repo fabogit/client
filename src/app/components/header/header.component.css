@@ -1,0 +1,4 @@
+header {
+	background-color: var(--color-primary-200-bg);
+	border-radius: var(--border-radius-medium);
+}

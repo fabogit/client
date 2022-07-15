@@ -1,1 +1,19 @@
-<p>header works!</p>
+
+<header>
+	<div>
+		<a href="">
+			<app-button
+				color="green"
+				btnText="Login"
+				(btnClick)="login()">
+			</app-button>
+		</a>
+		<a href="">
+			<app-button
+				color="blue"
+				btnText="Logout"
+				(btnClick)="logout()">
+			</app-button>
+		</a>
+	</div>
+</header>

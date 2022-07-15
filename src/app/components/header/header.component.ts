@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+	in = 'loggin user in';
+	out = 'loggin user out';
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+	login() {
+		console.log(this.in);
+	}
+	logout() {
+		console.log(this.out);
+	}
 }
