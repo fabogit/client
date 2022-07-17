@@ -5,8 +5,9 @@ section {
 .tickets-actions {
 	overflow: auto;
 	display: flex;
+	max-width: 80%;
 	justify-content: space-evenly;
-	margin: var(--space-4);
+	margin: var(--space-8) auto var(--space-8);
 	padding: auto var(--space-2);
 	/* border: 1px solid red; */
 	border-radius: var(--border-radius-medium);

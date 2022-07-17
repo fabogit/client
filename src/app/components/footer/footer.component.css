@@ -2,7 +2,7 @@
 
 		/* max-width: 90%; */
 		/* space t/b, center r/l */
-		margin: var(--space-8) auto;
+		margin: var(--space-10) auto var(--space-8);
 		/* padding: var(--space-4); */
 		background-color: var(--color-primary-200-bg);
 		border-radius: var(--border-radius-medium);
