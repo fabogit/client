@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-user-form',
-  templateUrl: './user-form.component.html',
-  styleUrls: ['./user-form.component.css']
+	selector: 'app-user-form',
+	templateUrl: './user-form.component.html',
+	styleUrls: ['./user-form.component.css']
 })
 export class UserFormComponent implements OnInit {
+	@Input() title: string;
 
-  constructor() { }
+	constructor() { }
 
-  ngOnInit(): void {
-  }
+	ngOnInit(): void {
+	}
 
 }

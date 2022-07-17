@@ -1,0 +1,11 @@
+.footer {
+
+		/* max-width: 90%; */
+		/* space t/b, center r/l */
+		margin: var(--space-8) auto;
+		/* padding: var(--space-4); */
+		background-color: var(--color-primary-200-bg);
+		border-radius: var(--border-radius-medium);
+		/* center inline elements */
+		text-align: center;
+}
