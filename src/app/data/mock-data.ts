@@ -1,6 +1,6 @@
-import { TicketPaginated } from "../interfaces/Ticket.interface";
+import { ITicketPaginated } from "../interfaces/Ticket.interface";
 
-export const TICKETS: TicketPaginated = {
+export const TICKETS: ITicketPaginated = {
 	"pagination": {
 			"page": 1,
 			"totalItems": 16,

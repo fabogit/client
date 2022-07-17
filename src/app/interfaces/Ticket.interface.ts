@@ -1,4 +1,4 @@
-export interface Comunication {
+export interface IComunication {
 	date: string // FIXME Date;
 	userId: string;
 	username: string;
@@ -6,26 +6,26 @@ export interface Comunication {
 	_id: string;
 }
 
-export interface Ticket {
+export interface ITicket {
 	_id: string;
 	username: string;
 	userId: string;
 	description: string;
 	isCompleted: boolean;
-	comunications?: Comunication[];
+	comunications: IComunication[];
 	createdAt: string // FIXME Date;
 	updatedAt: string // FIXME Date;
 	__v: number;
 }
 
-export interface PaginateMetadata {
+export interface IPaginateMetadata {
 	page: number;
 	totalItems: number;
 	itemsPerPage: number;
 	totalPages: number;
 }
 
-export interface TicketPaginated {
-	pagination: PaginateMetadata;
-	tickets?: Ticket[];
+export interface ITicketPaginated {
+	pagination: IPaginateMetadata;
+	tickets: ITicket[];
 }

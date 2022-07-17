@@ -6,8 +6,8 @@
 	cursor: pointer;
 }
 
-.ticket.status {
-	border-left: var(--space-2) solid green;
+.ticket.statusCompleted {
+	border-top: var(--space-2) solid green;
 }
 
 .ticket h3 {

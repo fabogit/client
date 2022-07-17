@@ -1,7 +1,16 @@
-<div class="ticket">
+<div
+	class="ticket"
+	[ngClass]="{ statusCompleted: ticket.isCompleted}"
+	(dblclick)="onToggle(ticket)"
+>
+
 	<h3>
-		{{ ticket.createdAt | date }}
-		<fa-icon [icon]="faTimes" [ngStyle]="{ color: 'red'}"></fa-icon>
+		{{ ticket.createdAt }}
+		<fa-icon
+			(click)="onDelete(ticket)"
+			[icon]="faTimes"
+			[ngStyle]="{ color: 'red'}">
+		</fa-icon>
 	</h3>
 	<p>{{ ticket._id }}</p>
 	<p>{{ ticket.username }}</p>
