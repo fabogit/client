@@ -18,6 +18,10 @@ export interface ITicket {
 	__v: number;
 }
 
+export interface INewTicket {
+	description: string;
+}
+
 export interface IPaginateMetadata {
 	page: number;
 	totalItems: number;

@@ -1,0 +1,15 @@
+<form *ngIf="showAddTicket" (ngSubmit)="onSubmit()">
+	<label for="description">Ticket Description</label>
+	<div>
+		<textarea
+			[(ngModel)]="description"
+			name="description"
+			id="description"
+			cols="30"
+			rows="10"
+			placeholder="Enter your description here..." required></textarea>
+		</div>
+	<input type="submit" class="btn" />
+	<!-- TEST -->
+	<!-- {{description}} -->
+</form>

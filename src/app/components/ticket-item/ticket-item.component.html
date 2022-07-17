@@ -5,13 +5,13 @@
 >
 
 	<h3>
-		{{ ticket.createdAt }}
+		{{ ticket.createdAt | date: 'yyyy/MM/dd HH:mm:ss' }}
 		<fa-icon
 			(click)="onDelete(ticket)"
 			[icon]="faTimes"
 			[ngStyle]="{ color: 'red'}">
 		</fa-icon>
 	</h3>
-	<p>{{ ticket._id }}</p>
-	<p>{{ ticket.username }}</p>
+	<p>TicketId: {{ ticket._id }}</p>
+	<p>Username: {{ ticket.username }}</p>
 </div>

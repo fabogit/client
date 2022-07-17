@@ -1,15 +1,20 @@
 <section>
-	<div id="tickets-actions">
+	<div class="tickets-actions">
 		<app-button color="var(--color-primary-200-contrast)" btnText="Page +1"></app-button>
-		<app-button color="var(--color-primary-400)" btnText="Create ticket"></app-button>
+		<app-button
+			(btnClick)="toggleAddTicket()"
+			color="{{showAddTicket ? 'red' : 'green'}}"
+			btnText="{{showAddTicket ? 'Close' : 'Add Ticket'}}">
+		</app-button>
 		<app-button color="var(--color-primary-200-contrast)" btnText="Page -1"></app-button>
 	</div>
-	<div id="tickets-list">
+	<app-add-ticket (onAddTicket)="addTicket($event)"></app-add-ticket>
+	<div class="tickets-list">
 		<app-ticket-item
-			*ngFor="let ticket of tickets" [ticket]="ticket"
-			(onDeleteTicket)="deleteTicket(ticket)"
-			(onToggleCompleted)="toggleStatus(ticket)"
+		*ngFor="let ticket of tickets" [ticket]="ticket"
+		(onDeleteTicket)="deleteTicket(ticket)"
+		(onToggleCompleted)="toggleStatus(ticket)"
 		>
-		</app-ticket-item>
+	</app-ticket-item>
 	</div>
 </section>

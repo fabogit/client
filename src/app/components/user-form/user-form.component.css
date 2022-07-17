@@ -8,6 +8,7 @@ form {
 	border-radius: var(--border-radius-medium);
 	/* center inline elements */
 	text-align: center;
+	overflow: auto;
 }
 
 form:hover,
