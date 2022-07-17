@@ -4,3 +4,8 @@ header {
 	display: flex;
 	justify-content: space-evenly;
 }
+
+a:hover {
+	text-decoration: none;
+	color: black;
+}
