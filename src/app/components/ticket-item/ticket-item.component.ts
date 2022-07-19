@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faTimes, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 import { ITicket } from 'src/app/interfaces/Ticket.interface';
 
@@ -12,7 +12,9 @@ export class TicketItemComponent implements OnInit {
 	@Input() ticket: ITicket;
 	@Output() onDeleteTicket: EventEmitter<ITicket> = new EventEmitter();
 	@Output() onToggleCompleted: EventEmitter<ITicket> = new EventEmitter();
+	@Output() onOpenDetails: EventEmitter<ITicket> = new EventEmitter();
 	faTimes = faTimes;
+	faEnvelope = faEnvelope;
 
 	constructor() { }
 
@@ -29,5 +31,11 @@ export class TicketItemComponent implements OnInit {
 	onToggle(ticket: ITicket) {
 		this.onToggleCompleted.emit(ticket)
 		console.log(`status ${ticket.isCompleted}`);
+	}
+
+	openDetails(ticket: ITicket){
+		this.onOpenDetails.emit(ticket)
+		console.log('Opening messages');
+
 	}
 }

@@ -1,12 +1,28 @@
 <section>
 	<div class="tickets-actions">
-		<app-button color="var(--color-primary-200-contrast)" btnText="Page +1"></app-button>
+
+		<div class="icons">
+			<fa-icon
+				(click)="pageSubtract()"
+				[icon]="faAngleLeft"
+				[ngStyle]="{ color: 'var(--color-primary-400)'}">
+			</fa-icon>
+		</div>
+
 		<app-button
 			(btnClick)="toggleAddTicket()"
 			color="{{showAddTicket ? 'red' : 'green'}}"
 			btnText="{{showAddTicket ? 'Close' : 'Add Ticket'}}">
 		</app-button>
-		<app-button color="var(--color-primary-200-contrast)" btnText="Page -1"></app-button>
+
+		<div class="icons">
+			<fa-icon
+				(click)="pageAdd()"
+				[icon]="faAngleRight"
+				[ngStyle]="{ color: 'var(--color-primary-400)'}">
+			</fa-icon>
+		</div>
+
 	</div>
 	<app-add-ticket (onAddTicket)="addTicket($event)"></app-add-ticket>
 	<div class="tickets-list">

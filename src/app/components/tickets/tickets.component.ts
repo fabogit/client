@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
 import { UiService } from 'src/app/services/ui.service';
 
@@ -17,11 +18,16 @@ import { TicketService } from 'src/app/services/tickets.service';
   styleUrls: ['./tickets.component.css'],
 })
 export class TicketsComponent implements OnInit {
+	@Output() onPageAdd: EventEmitter<IPaginateMetadata> = new EventEmitter();
+	@Output() onPageSubtract: EventEmitter<IPaginateMetadata> = new EventEmitter();
   tickets: ITicket[] = [];
   paginationInfo: IPaginateMetadata;
   paginatedTickets: ITicketPaginated;
   showAddTicket: boolean;
   subscription: Subscription;
+
+	faAngleLeft = faAngleLeft
+	faAngleRight = faAngleRight
 
   constructor(
     private ticketService: TicketService,
@@ -43,6 +49,20 @@ export class TicketsComponent implements OnInit {
     });
   }
 
+	// TODO pagination
+	pageSubtract(){
+		this.onPageSubtract.emit()
+		console.log('Page -1');
+
+	}
+
+	// TODO pagination
+	pageAdd(){
+		this.onPageAdd.emit()
+		console.log('Page +1');
+
+	}
+
   deleteTicket(ticket: ITicket) {
     this.ticketService.deleteTicket(ticket).subscribe(() => {
       this.tickets = this.tickets.filter((t) => t._id !== ticket._id);
@@ -52,7 +72,6 @@ export class TicketsComponent implements OnInit {
   toggleStatus(ticket: ITicket) {
     ticket.isCompleted = !ticket.isCompleted;
     this.ticketService.updateTicketComplete(ticket).subscribe(() => {
-      // TODO log
       console.log(`Status updated ${ticket}`);
     });
   }
@@ -61,7 +80,7 @@ export class TicketsComponent implements OnInit {
     console.log(newTicket);
     this.ticketService.addTicket(newTicket).subscribe((t) => {
       // add new ticket to list
-      // TODO how???
+      // TODO how??? get created ticket back from response
       // this.tickets.push(t)
     });
   }
