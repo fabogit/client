@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-import { IUser, IUserLogin, IUserRegister } from '../interfaces/User.interface';
+import { IUser, IUserLogin, IUserRegisterReq, IUserRegisterRes } from '../interfaces/User.interface';
 
 @Injectable({
 	providedIn: 'root',
@@ -12,7 +12,7 @@ export class UserService {
 	constructor(private http: HttpClient) { }
 
 	// TODO
-	registerUser(user: IUser): Observable<IUser> {
+	registerUser(user: IUserRegisterReq): Observable<IUserRegisterRes> {
 		const url = `${this.urlHost}/users`;
 		return this.http.post<IUser>(url, { username: user.username, password: user.password });
 	}
